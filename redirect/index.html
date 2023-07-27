@@ -1,11 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>redirect</title>
+    <title>Discord Redirect</title>
 </head>
 <body>
     <script>
-        window.location.href = `https://discord.com/oauth2/authorize?client_id=1128504467961163776&redirect_uri=https%3A%2F%2Fguilded1.github.io%2Fredirect%2F&response_type=code&scope=identify`;
+        // Get the query parameters from the URL
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+
+        // Check if the URL contains the 'code' parameter
+        if (urlParams.has('code')) {
+            // Get the 'code' parameter value
+            const code = urlParams.get('code');
+
+            // Use JavaScript to make a POST request to your server with the 'code'
+            // You can use libraries like Axios or fetch to make the request
+            // Example using fetch:
+            fetch('https://your-server-url.com/discord/callback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ code: code })
+            })
+            .then(response => {
+                // Handle the response from your server if needed
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
     </script>
 </body>
 </html>

@@ -1,1 +1,11 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>redirect</title>
+</head>
+<body>
+    <script>
+        window.location.href = `https://discord.com/oauth2/authorize?client_id=1128504467961163776&redirect_uri=https%3A%2F%2Fyour-github-username.github.io%2Fdiscord-redirect%2F&response_type=code&scope=identify`;
+    </script>
+</body>
+</html>

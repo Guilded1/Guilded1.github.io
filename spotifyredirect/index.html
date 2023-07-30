@@ -1,1 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>spotify</title>
+</head>
+<body>
+    <script>
+        // Function to parse query parameters from the URL
+        function getQueryParams(url) {
+            const queryParams = {};
+            const params = url.slice(url.indexOf('?') + 1).split('&');
+            for (const param of params) {
+                const [key, value] = param.split('=');
+                queryParams[key] = decodeURIComponent(value);
+            }
+            return queryParams;
+        }
 
+        // Get the query parameters from the URL
+        const queryParams = getQueryParams(window.location.href);
+
+        // Check if the page was redirected from Spotify with the access token
+        if (queryParams.access_token) {
+            // Do something with the access token, e.g., send it to the server
+            const accessToken = queryParams.access_token;
+            console.log('Access Token:', accessToken);
+
+            // You can also retrieve other parameters like 'expires_in', 'token_type', etc.
+            // const expiresIn = queryParams.expires_in;
+            // const tokenType = queryParams.token_type;
+
+            // For security, you should send the access token to your server-side application
+            // and handle further API requests from there.
+        } else {
+            // Handle the case when the access token is not present, e.g., show an error message.
+            console.error('Access Token not found in the URL.');
+        }
+    </script>
+</body>
+</html>

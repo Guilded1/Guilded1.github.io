@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spotify OAuth2</title>
+    <title>Spotify Redirect</title>
 </head>
 <body>
     <script>
-        // Function to parse query parameters from the URL
+        // Function to parse query parameters from the URL fragment
         function getQueryParams(url) {
             const queryParams = {};
-            const params = url.slice(url.indexOf('?') + 1).split('&');
+            const params = url.slice(url.indexOf('#') + 1).split('&');
             for (const param of params) {
                 const [key, value] = param.split('=');
                 queryParams[key] = decodeURIComponent(value);
@@ -18,24 +18,18 @@
             return queryParams;
         }
 
-        // Get the query parameters from the URL
+        // Get the query parameters from the URL fragment
         const queryParams = getQueryParams(window.location.href);
 
         // Check if the page was redirected from Spotify with the access token
         if (queryParams.access_token) {
-            // Use the access token for making API requests to the Spotify Web API
+            // Do something with the access token, e.g., send it to the server
             const accessToken = queryParams.access_token;
             console.log('Access Token:', accessToken);
 
-            // Now you can make API requests to the Spotify Web API using the accessToken
-            // For example:
-            // fetch('https://api.spotify.com/v1/me', {
-            //   headers: {
-            //     'Authorization': `Bearer ${accessToken}`
-            //   }
-            // })
-            // .then(response => response.json())
-            // .then(data => console.log('User Info:', data));
+            // You can also retrieve other parameters like 'expires_in', 'token_type', etc.
+            // const expiresIn = queryParams.expires_in;
+            // const tokenType = queryParams.token_type;
 
             // For security, you should send the access token to your server-side application
             // and handle further API requests from there.

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>spotify</title>
+    <title>Spotify OAuth2</title>
 </head>
 <body>
     <script>
@@ -23,13 +23,19 @@
 
         // Check if the page was redirected from Spotify with the access token
         if (queryParams.access_token) {
-            // Do something with the access token, e.g., send it to the server
+            // Use the access token for making API requests to the Spotify Web API
             const accessToken = queryParams.access_token;
             console.log('Access Token:', accessToken);
 
-            // You can also retrieve other parameters like 'expires_in', 'token_type', etc.
-            // const expiresIn = queryParams.expires_in;
-            // const tokenType = queryParams.token_type;
+            // Now you can make API requests to the Spotify Web API using the accessToken
+            // For example:
+            // fetch('https://api.spotify.com/v1/me', {
+            //   headers: {
+            //     'Authorization': `Bearer ${accessToken}`
+            //   }
+            // })
+            // .then(response => response.json())
+            // .then(data => console.log('User Info:', data));
 
             // For security, you should send the access token to your server-side application
             // and handle further API requests from there.

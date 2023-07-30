@@ -1,2 +1,2 @@
 # Guilded1.github.io
-my bio, mostly for discord.
+my website files, mostly for discord.

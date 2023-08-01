@@ -6,13 +6,13 @@
     <title>Spotify Redirect</title>
 </head>
 <body>
-    <p id="accessTokenDisplay">Token: </p>
+    <p id="accessTokenDisplay">Code: </p>
 
     <script>
         // Function to parse query parameters from the URL fragment
         function getQueryParams(url) {
             const queryParams = {};
-            const params = url.slice(url.indexOf('#') + 1).split('&');
+            const params = url.slice(url.indexOf('?') + 1).split('&'); // Change '#' to '?'
             for (const param of params) {
                 const [key, value] = param.split('=');
                 queryParams[key] = decodeURIComponent(value);
@@ -23,24 +23,24 @@
         // Get the query parameters from the URL fragment
         const queryParams = getQueryParams(window.location.href);
 
-        // Check if the page was redirected from Spotify with the access token
-        if (queryParams.access_token) {
-            // Do something with the access token, e.g., send it to the server
-            const accessToken = queryParams.access_token;
+        // Check if the page was redirected from Spotify with the code parameter
+        if (queryParams.code) {
+            // Do something with the code, e.g., send it to the server
+            const code = queryParams.code;
 
-            // Display the bearer token in the HTML element
+            // Display the code in the HTML element
             const accessTokenDisplayElement = document.getElementById("accessTokenDisplay");
-            accessTokenDisplayElement.textContent += accessToken;
+            accessTokenDisplayElement.textContent += code;
 
-            // You can also retrieve other parameters like 'expires_in', 'token_type', etc.
-            // const expiresIn = queryParams.expires_in;
-            // const tokenType = queryParams.token_type;
+            // You will use this code to obtain the access token by making a request to the Spotify API.
+            // Follow the Authorization Code Flow to complete the authentication process.
+            // https://developer.spotify.com/documentation/general/guides/authorization-guide/#authorization-code-flow
 
-            // For security, you should send the access token to your server-side application
+            // For security, you should send the code to your server-side application
             // and handle further API requests from there.
         } else {
-            // Handle the case when the access token is not present, e.g., show an error message.
-            console.error('Access Token not found in the URL.');
+            // Handle the case when the code is not present, e.g., show an error message.
+            console.error('Code not found in the URL.');
         }
     </script>
 </body>

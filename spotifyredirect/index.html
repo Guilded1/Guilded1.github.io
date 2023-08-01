@@ -6,6 +6,8 @@
     <title>Spotify Redirect</title>
 </head>
 <body>
+    <p id="accessTokenDisplay">Token: </p>
+
     <script>
         // Function to parse query parameters from the URL fragment
         function getQueryParams(url) {
@@ -25,7 +27,10 @@
         if (queryParams.access_token) {
             // Do something with the access token, e.g., send it to the server
             const accessToken = queryParams.access_token;
-            console.log('Access Token:', accessToken);
+
+            // Display the bearer token in the HTML element
+            const accessTokenDisplayElement = document.getElementById("accessTokenDisplay");
+            accessTokenDisplayElement.textContent += accessToken;
 
             // You can also retrieve other parameters like 'expires_in', 'token_type', etc.
             // const expiresIn = queryParams.expires_in;

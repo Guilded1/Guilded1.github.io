@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        form {
+            margin: 50px auto;
+            width: 300px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="password"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+
+        #code-container {
+            margin: 50px auto;
+            width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        textarea {
+            display: block;
+            width: 100%;
+            height: 300px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login Page</h1>
+    <form id="login-form" onsubmit="return login()">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+        <button type="submit">Login</button>
+    </form>
+    <div id="code-container" style="display: none;">
+        <h2>Code Storage</h2>
+        <textarea id="code"></textarea>
+        <button onclick="saveCode()">Save Code</button>
+    </div>
+    <script>
+        function login() {
+            var password = document.getElementById("password").value;
+            if (password === "test32") {
+                document.getElementById("login-form").style.display = "none";
+                document.getElementById("code-container").style.display = "block";
+                return false;
+            } else {
+                alert("Incorrect password!");
+                return false;
+            }
+        }
+
+        function saveCode() {
+            var code = document.getElementById("code").value;
+            localStorage.setItem("code", code);
+            alert("Code saved!");
+        }
+
+        window.onload = function() {
+            var savedCode = localStorage.getItem("code");
+            if (savedCode) {
+                document.getElementById("code").value = savedCode;
+            }
+        };
+    </script>
+</body>
+</html>

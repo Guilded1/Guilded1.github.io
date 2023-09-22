@@ -93,14 +93,14 @@
 <body>
     <h1>Login Page</h1>
     <form id="login-form" onsubmit="return login()">
-        <label for="password">Password:</label>
+        <label for="password">Password</label>
         <input type="password" id="password" name="password">
         <button type="submit">Login</button>
     </form>
     <div id="code-container" style="display: none;">
-        <h2>Code Storage</h2>
+        <h2>Storage</h2>
         <textarea id="code"></textarea>
-        <button onclick="saveCode()">Save Code</button>
+        <button onclick="saveCode()">Save</button>
     </div>
     <script>
         function login() {

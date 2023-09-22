@@ -105,26 +105,35 @@
     <script>
         function login() {
             var password = document.getElementById("password").value;
-            if (password === "test32") {
+            if (password) {
                 document.getElementById("login-form").style.display = "none";
                 document.getElementById("code-container").style.display = "block";
+                loadCode(password);
                 return false;
             } else {
-                alert("Incorrect password!");
+                alert("Please enter a password!");
                 return false;
             }
         }
 
         function saveCode() {
+            var password = document.getElementById("password").value;
             var code = document.getElementById("code").value;
-            localStorage.setItem("code", code);
+            localStorage.setItem("code-" + password, code);
             alert("Code saved!");
         }
 
-        window.onload = function() {
-            var savedCode = localStorage.getItem("code");
+        function loadCode(password) {
+            var savedCode = localStorage.getItem("code-" + password);
             if (savedCode) {
                 document.getElementById("code").value = savedCode;
+            }
+        }
+
+        window.onload = function() {
+            var password = document.getElementById("password").value;
+            if (password) {
+                loadCode(password);
             }
         };
     </script>

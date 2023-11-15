@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(21, 36, 110);
+    transition: all 0.5s ease-out;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: all 0.5s ease-out;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: all 0.5s ease-out;
+}
+
+p {
+    color: #333;
+}
+
+*:focus,
+*:disabled {
+    animation-name: Width;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+    border-radius: 15px;
+}
+
+*:enabled {
+    animation-name: WidthA;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in;
+    animation-duration: 1s;
+    border-radius: 5px;
+}
+
+@keyframes Width {
+    0% {
+        border-radius: 5px;
+    }
+    100% {
+        border-radius: 15px;
+    }
+}
+
+@keyframes WidthA {
+    0% {
+        border-radius: 15px;
+    }
+    100% {
+        border-radius: 5px;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>old fart</h2>
+
+    <p>Input for Encryption:</p>
+    <input type="text" id="inputEncrypt" oninput="encrypt(this.value)">
+
+    <p>Encrypted Output:</p>
+    <p id="outputEncrypt"></p>
+
+    <p>Input for Decryption:</p>
+    <input type="text" id="inputDecrypt" oninput="decrypt(this.value)">
+
+    <p>Decrypted Output:</p>
+    <p id="outputDecrypt"></p>
+</div>
+
+<script>
+let shift = 3;
+
+function encrypt(input) {
+    let output = "";
+
+    for (let i = 0; i < input.length; i++) {
+        let ascii = input.charCodeAt(i);
+
+        if (ascii >= 65 && ascii <= 90) {
+            output += String.fromCharCode((ascii - 65 + shift) % 26 + 65);
+        } else if (ascii >= 97 && ascii <= 122) {
+            output += String.fromCharCode((ascii - 97 + shift) % 26 + 97);
+        } else {
+            output += input.charAt(i);
+        }
+    }
+
+    document.getElementById("outputEncrypt").textContent = output;
+}
+
+function decrypt(input) {
+    let output = "";
+
+    for (let i = 0; i < input.length; i++) {
+        let ascii = input.charCodeAt(i);
+
+        if (ascii >= 65 && ascii <= 90) {
+            output += String.fromCharCode((ascii - 65 - shift + 26) % 26 + 65);
+        } else if (ascii >= 97 && ascii <= 122) {
+            output += String.fromCharCode((ascii - 97 - shift + 26) % 26 + 97);
+        } else {
+            output += input.charAt(i);
+        }
+    }
+
+    document.getElementById("outputDecrypt").textContent = output;
+}
+</script>
+
+</body>
+</html>

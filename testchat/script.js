@@ -1,4 +1,4 @@
-const socket = new WebSocket("wss://guilded1.github.io");
+const socket = new WebSocket("wss://" + window.location.host);
 
 socket.addEventListener("open", (event) => {
   console.log("Connected to WebSocket server");

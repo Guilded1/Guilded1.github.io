@@ -1,7 +1,9 @@
 const WebSocket = require('ws');
+const express = require('express');
 const http = require('http');
 
-const server = http.createServer();
+const app = express();
+const server = http.createServer(app);
 const wss = new WebSocket.Server({ server });
 
 wss.on('connection', (ws) => {
@@ -14,6 +16,14 @@ wss.on('connection', (ws) => {
   });
 });
 
-server.listen(process.env.PORT || 3000, () => {
-  console.log(`WebSocket server is running on port ${server.address().port}`);
+// Allow connections from GitHub Pages domain
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://guilded1.github.io');
+  next();
+});
+
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, () => {
+  console.log(`WebSocket server is running on port ${PORT}`);
 });

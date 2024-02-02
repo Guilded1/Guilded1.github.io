@@ -18,7 +18,7 @@ wss.on('connection', (ws) => {
 
 // Allow connections from GitHub Pages domain
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', 'https://guilded1.github.io');
+  res.header('Access-Control-Allow-Origin', '*');
   next();
 });
 

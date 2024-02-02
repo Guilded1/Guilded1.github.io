@@ -9,6 +9,10 @@ socket.addEventListener("message", (event) => {
   chatBox.innerHTML += `<p>${event.data}</p>`;
 });
 
+socket.addEventListener('close', (event) => {
+  console.log('WebSocket connection closed:', event);
+});
+
 function sendMessage() {
   const messageInput = document.getElementById("message-input");
   const message = messageInput.value;

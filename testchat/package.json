@@ -1,0 +1,29 @@
+{
+  "name": "testchat",
+  "version": "1.0.0",
+  "description": "i gave up on my main project so this is a sub for it",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guilded1/guilded1.github.io/testchat.git"
+  },
+  "keywords": [
+    "chat",
+    "real",
+    "time",
+    "socket.io"
+  ],
+  "author": "relevant (relevant500 on Discord)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/guilded1/guilded1.github.io/issues"
+  },
+  "homepage": "https://github.com/guilded1/guilded1.github.io",
+  "dependencies": {
+    "server": "^1.0.0-beta.2"
+  }
+}

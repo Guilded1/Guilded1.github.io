@@ -13,6 +13,19 @@ socket.addEventListener('close', (event) => {
   console.log('WebSocket connection closed:', event);
 });
 
+function setUsername(username) {
+  socket.send(JSON.stringify({ type: 'setUsername', username }));
+}
+
+function getUsername() {
+  return prompt('Enter your username:');
+}
+
+document.getElementById('setUsernameButton').addEventListener('click', () => {
+  const username = getUsername();
+  setUsername(username);
+});
+
 function sendMessage() {
   const messageInput = document.getElementById("message-input");
   const message = messageInput.value;

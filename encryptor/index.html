@@ -14,6 +14,7 @@ body {
     transition: all 0.5s ease-out;
 }
 
+
 .container {
     text-align: center;
     padding: 20px;
@@ -75,7 +76,10 @@ p {
 <body>
 
 <div class="container">
-    <h2>old fart</h2>
+    <h2>text shift</h2>
+
+    <p>level of shift</p>
+    <input type="text" id="shift" oninput="shiftnum(this.value)">
 
     <p>Input for Encryption:</p>
     <input type="text" id="inputEncrypt" oninput="encrypt(this.value)">
@@ -92,6 +96,10 @@ p {
 
 <script>
 let shift = 3;
+function shiftnum(num) {
+    shift = num;
+}
+
 
 function encrypt(input) {
     let output = "";

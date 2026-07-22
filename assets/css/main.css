@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+pre, span, div, p, h1 {
+  background-color: transparent;
+}
+
+* {
+  text-align: center;
+
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+
+  background-color: black;
+  color: white;
+
+  font-family: 'Source Code Pro', monospace;
+}
+
+pre {
+  /* background: white; */
+}
+
+.inline-container {
+  position: absolute;
+  bottom: 15%;
+  width: 470px;
+  /* width: 600px; */
+}
+
+.emoji {
+  height: 20px;
+  bottom:50%;
+  transform:translateY(30%);
+}
+
+#marquee {
+  display: inline-block;
+  width: 450px;
+}
+
+.title {
+  font-size: 25px;
+}
+
+.center {
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+}
+
+.topbar {
+  top: 5%;
+}
+
+.centerbar {
+  
+}
+
+.bottombar {
+  top: auto;
+  bottom: 5%;
+}
+.bio {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#typing {
+    display: block;
+}
+
+.links {
+    margin-top: 40px;
+    opacity: 0;
+    transform: translateX(-36px);
+    transition: opacity 1.43s ease;
+}
+
+.links.visible {
+    opacity: 1;
+}
+
+.links pre {
+    text-align: left;
+}
+
+.links a {
+    color: white;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+

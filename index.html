@@ -1,273 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Yeah something like that</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta property="og:title" content="Updated this website i think"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:url" content="https://Guilded1.github.io"/>
-    <style>
-        .page {
-            background: linear-gradient(to right, #202944, #4d5770, #8f98b2, #fefefe);
-            border-radius: 10px;
-            font-family: Open Sans,Arial;
-            color: #454545;
-            font-size: 16px;
-            margin: 2em auto;
-            max-width: 800px;
-            padding: 1em;
-            line-height: 1.4;
-            text-align: justify
-        }
+<title>The cooler bio</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/css/cte.css">
 
-        html .page {
-            color: #d9d9d9;
-            opacity: .95
-        }
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RD5B41KFXM"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
 
-        html blockquote {
-            color: #d3c9be
-        }
-
-        html blockquote:before {
-            color: #b8b8b8
-        }
-
-        html a {
-            color: #00a2e7
-        }
-
-        html a:visited {
-            color: #ca1a70
-        }
-
-        .noselect {
-            -webkit-touch-callout: none;
-            -webkit-user-select: none;
-            -khtml-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none
-        }
-
-        span.citneed {
-            vertical-align: top;
-            font-size: .7em;
-            padding-left: .3em
-        }
-
-        small {
-            font-size: .4em
-        }
-
-        p.st {
-            margin-top: -1em
-        }
-
-        div.fancyPositioning div.picture-left {
-            float: left;
-            width: 40%;
-            overflow: hidden;
-            margin-right: 1em
-        }
-
-        div.fancyPositioning div.picture-left img {
-            width: 100%
-        }
-
-        div.fancyPositioning div.picture-left figure {
-            margin: 10px
-        }
-
-        div.fancyPositioning div.picture-left figure figcaption {
-            font-size: .7em
-        }
-
-        div.fancyPositioning div.tleft {
-            float: left;
-            width: 55%
-        }
-
-        div.fancyPositioning div.tleft p:first-child {
-            margin-top: 0
-        }
-
-        div.fancyPositioning:after {
-            display: block;
-            content: "";
-            clear: both
-        }
-
-        ul li img {
-            height: 1em
-        }
-
-        blockquote {
-            color: #456;
-            margin-left: 0;
-            margin-top: 2em;
-            margin-bottom: 2em
-        }
-
-        blockquote span {
-            float: left;
-            margin-left: 1rem;
-            padding-top: 1rem
-        }
-
-        blockquote author {
-            display: block;
-            clear: both;
-            font-size: .6em;
-            margin-left: 2.4rem;
-            font-style: oblique
-        }
-
-        blockquote author:before {
-            content: "- ";
-            margin-right: 1em
-        }
-
-        blockquote:before {
-            font-family: Times New Roman,Times,Arial;
-            color: #666;
-            content: open-quote;
-            font-size: 2.2em;
-            font-weight: 600;
-            float: left;
-            margin-top: 0;
-            margin-right: .2rem;
-            width: 1.2rem
-        }
-
-        blockquote:after {
-            content: "";
-            display: block;
-            clear: both
-        }
-
-        @media screen and (max-width: 500px) {
-            body {
-                text-align:left
-            }
-
-            div.fancyPositioning div.picture-left,div.fancyPositioning div.tleft {
-                float: none;
-                width: inherit
-            }
-
-            blockquote span {
-                width: 80%
-            }
-
-            blockquote author {
-                padding-top: 1em;
-                width: 80%;
-                margin-left: 15%
-            }
-
-            blockquote author:before {
-                content: "";
-                margin-right: inherit
-            }
-        }
-
-        span.visited {
-            color: #941352
-        }
-
-        span.visited-maroon {
-            color: #85144b
-        }
-
-        span.wr {
-            color: #c0392b;
-            font-weight: 600
-        }
-
-        span.sb {
-            color: #00e
-        }
-
-        span.sb,span.sv {
-            cursor: not-allowed
-        }
-
-        span.sv {
-            color: #551a8b
-        }
-
-        a.kopimi,a.kopimi img.kopimi {
-            display: block;
-            margin-left: auto;
-            margin-right: auto
-        }
-
-        a.kopimi img.kopimi {
-            height: 2em
-        }
-
-        p.fakepre {
-            font-family: monospace;
-            font-size: .9em
-        }
-        .hero-video video {
-            background-color: #000;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            pointer-events: none;
-            object-fit: cover;
-        }
-    </style>
-    <style>
-        /* Custom Scrollbars */
-        ::-webkit-scrollbar {
-            width: 6px;
-            background-color: #28273d;
-            color: #2a2761;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #28273d
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #434257
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #555
-        }
-    </style>
+    gtag('config', 'G-RD5B41KFXM');
+  </script>
 </head>
 <body>
-    <div class="hero-video noselect">
-        <video id="video" playsinline autoplay muted loop disablepictureinpicture disableremoteplayback src="assets/nullscapes.mp4"></video>
+<div id="particles-container"></div>
+<audio controls hidden loop preload="auto">
+  <source src="assets/audio/background.mp3" type="audio/mpeg">
+</audio>
+<div id="content-container">
+
+    <div class="center title topbar">
+        <img class="emoji" src="/assets/images/separator.png">
+        Nice bio
+        <img class="emoji" src="/assets/images/separator.png">
     </div>
-    <div class="page">
-    <h1 class="title"><center>autism bio</center></h1>
-   <p class="st"><center><a href="https://discordid.netlify.app/?id=776991770977894421">Discord</a></center></p>
-   <p class="st"><center><a href="https://guns.lol/relevant">Other bio</a></center></p>
-    <h2>Programming languages:</h2>
-    <ul>
-        <li><img src="./assets/lua.svg" title="Lua" height="0.5em"> Lua</li>
-        <li><img src="./assets/python.svg" title="python" height="0.5em"> Python</li>
-        <li><img src="./assets/C_Logo[1].png" title="C" height="0.5em"> C</li>
-        <li><img src="./assets/cpp_logo.svg" title="C++" height="0.5em"> C++</li>
-        <li><img src="./assets/jslogo.png" title="JS" height="0.5em"> Javascript</li>
-    </ul>
-        <ul>
-<h2>About me (relevant500)</h2>
-    <p>mainly Lua dev</p>
-    <p>Attributed to many great programs</p>
-    <p>Created Earth, (mainly)Lua programs, and some other misc stuff</p>
-     </ul>
+
+    <div class="bio">
+        <span id="typing"></span>
+
+        <div class="links" id="links">
+            <pre>
+            UTC-05
+            
+            Links
+            
+              • <a href="https://github.com/Guilded1" target="_blank">GitHub</a>
+              • <a href="https://youtube.com/@relevant500" target="_blank">YouTube</a>
+              • <a href="https://guns.lol/relevant" target="_blank">Other bio</a>
+
+
+            Projects
+
+              • <a href="https://github.com/Guilded1/hashlib" target="_blank">Fingerprint & Hash library (lua)</a>
+            </pre>
+          </div>
+    </div>
+
 </div>
-</body>
+
+<script src="/assets/particles/particles.min.js"></script>
+<script src="/assets/particles/app.js"></script>
+<script src="/assets/js/cte.js"></script>
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/jquery.marquee.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    // var CTE = {};
+    CTE.callback = () => {
+      var aud = document.getElementsByTagName("audio")[0];
+      aud.volume = .387;
+      aud.play();
+
+      var typed = new Typed("#typing", {
+          strings: [
+              `C, C# dev<br>
+              Python connoisseur<br>
+              Lua dev/reverse engineer<br>
+              Game analyst @ The Mbappe Special<br>
+              relevant500`
+          ],
+          typeSpeed: 32,
+          contentType: 'html',
+          showCursor: false,
+          loop: false,
+          onComplete: function() {
+              document.getElementById("links").classList.add("visible");
+          }
+      });
+
+      $("#marquee").marquee({
+        duration: 7500,
+        gap: 100,
+        delayBeforeStart: 1000,
+        direction: 'left',
+      });
+    }
+    // CTE.callback();
+  </script>
+<script>(function(){var js = "window['__CF$cv$params']={r:'7ff13ec2bbcd842b',t:'MTY5MzQ0MjY2OC4xMTYwMDA='};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></body>
 </html>
